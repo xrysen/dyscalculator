@@ -39,10 +39,10 @@ const Form = () => {
       default:
         break;
     }
-  }
+  };
 
   useEffect(() => {
-    setTotal(one + five + ten + twenty + fifty + hundred)
+    setTotal(one + five + ten + twenty + fifty + hundred);
   }, [one, five, ten, twenty, fifty, hundred]);
 
   return (
@@ -75,7 +75,7 @@ const Form = () => {
           <tr>
             <td>$20 Bills</td>
             <td>
-              <select onChange={(e)=> handleBillChange(20, e)}>
+              <select onChange={(e) => handleBillChange(20, e)}>
                 <Option />
               </select>
             </td>
@@ -83,7 +83,7 @@ const Form = () => {
           <tr>
             <td>$10 Bills</td>
             <td>
-              <select onChange={(e)=> handleBillChange(10, e)}>
+              <select onChange={(e) => handleBillChange(10, e)}>
                 <Option />
               </select>
             </td>
@@ -91,7 +91,7 @@ const Form = () => {
           <tr>
             <td>$5 Bills</td>
             <td>
-              <select onChange={(e)=> handleBillChange(5, e)}>
+              <select onChange={(e) => handleBillChange(5, e)}>
                 <Option />
               </select>
             </td>
@@ -99,7 +99,7 @@ const Form = () => {
           <tr>
             <td>$1 Bills</td>
             <td>
-              <select onChange={(e)=> handleBillChange(1, e)}>
+              <select onChange={(e) => handleBillChange(1, e)}>
                 <Option />
               </select>
             </td>

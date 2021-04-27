@@ -3,10 +3,12 @@ const Option = (props) => {
 
   return (
     <>
-        {nums.map((item) => (
-          <option key={item} value={item}>{item}</option>
-        ))}
-      </>
+      {nums.map((item) => (
+        <option key={item} value={item}>
+          {item}
+        </option>
+      ))}
+    </>
   );
 };
 
