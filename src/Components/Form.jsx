@@ -1,18 +1,24 @@
 import "./Form.css";
-import Option from "./Option";
+import Bill from "./Bill";
 
 const Form = () => {
-
   return (
     <div className="form">
-      <Option bill = "$100 Bills" />
-      <Option bill = "$50 Bills" />
-      <Option bill = "$20 Bills" />
-      <Option bill = "$10 Bills" />
-      <Option bill = "$5 Bills" />
-      <Option bill = "$1 Bills" />
+      <h1>What's in Your Wallet?</h1>
+      <table>
+        <tr>
+          <th>Bill</th>
+          <th>Amount</th>
+        </tr>
+        <Bill bill = "$100 Bills" />
+        <Bill bill = "$50 Bills" />
+        <Bill bill = "$20 Bills" />
+        <Bill bill = "$10 Bills" />
+        <Bill bill = "$5 Bills" />
+        <Bill bill = "$1 Bills" />
+      </table>
     </div>
-  )
-}
+  );
+};
 
 export default Form;

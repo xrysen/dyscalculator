@@ -13,3 +13,7 @@
 .option {
   padding-right: 20px;
 }
+
+th, td {
+  padding: 10px;
+}
