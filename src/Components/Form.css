@@ -4,7 +4,6 @@
   background-color: #525174;
   justify-content: center;
   align-items: center;
-  margin-top: 10vh;
   width: 50vw;
   border-radius: 10px;
   color: #BDADEA;
@@ -16,4 +15,8 @@
 
 th, td {
   padding: 10px;
+}
+
+h1 {
+  margin-top: 40px;
 }

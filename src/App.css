@@ -8,5 +8,9 @@ body {
 h1 {
   text-align: center;
   color: #BDADEA;
-  margin-top: 10vh;
+  
+}
+
+.app {
+  margin-top: 15vh;
 }
