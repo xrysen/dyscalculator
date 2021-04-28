@@ -4,36 +4,51 @@ import Option from "./Option";
 
 const Form = () => {
   const [total, setTotal] = useState(0);
-  const [hundred, setHundred] = useState(0);
-  const [fifty, setFifty] = useState(0);
-  const [twenty, setTwenty] = useState(0);
-  const [ten, setTen] = useState(0);
-  const [five, setFive] = useState(0);
-  const [one, setOne] = useState(0);
+  const [bills, setBills] = useState({
+    hundred: 0,
+    fifty: 0,
+    twenty: 0,
+    ten: 0,
+    five: 0,
+    one: 0,
+    quarter: 0,
+    dime: 0,
+    nickel: 0,
+    penny: 0,
+  });
 
   const handleBillChange = (bill, e) => {
     switch (bill) {
       case 1:
-        setOne(1 * e.target.value);
+        setBills({
+          ...bills,
+          one: 1 * e.target.value,
+        });
         break;
       case 5:
-        setFive(5 * e.target.value);
+        setBills({
+          ...bills,
+          five: 5 * e.target.value,
+        });
         break;
 
       case 10:
-        setTen(10 * e.target.value);
+        setBills({
+          ...bills,
+          ten: 10 * e.target.value,
+        });
         break;
 
       case 20:
-        setTwenty(20 * e.target.value);
+        setBills({ ...bills, twenty: 20 * e.target.value });
         break;
 
       case 50:
-        setFifty(50 * e.target.value);
+        setBills({ ...bills, fifty: 50 * e.target.value });
         break;
 
       case 100:
-        setHundred(100 * e.target.value);
+        setBills({ ...bills, hundred: 100 * e.target.value });
         break;
 
       default:
@@ -42,8 +57,12 @@ const Form = () => {
   };
 
   useEffect(() => {
-    setTotal(one + five + ten + twenty + fifty + hundred);
-  }, [one, five, ten, twenty, fifty, hundred]);
+     let sum = 0;
+     for (const key in bills) {
+       sum += bills[key];
+     }
+     setTotal(sum);
+  }, [bills]);
 
   return (
     <div className="form">
@@ -52,6 +71,8 @@ const Form = () => {
         <thead>
           <tr>
             <th>Bill</th>
+            <th>Amount</th>
+            <th>Change</th>
             <th>Amount</th>
           </tr>
         </thead>
