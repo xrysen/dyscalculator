@@ -17,60 +17,14 @@ const Form = () => {
     penny: 0,
   });
 
-  const handleBillChange = (bill, e) => {
-    switch (bill) {
-      case 1:
-        setBills({
-          ...bills,
-          one: 1 * Number(e.target.value),
-        });
-        break;
-      case 5:
-        setBills({
-          ...bills,
-          five: 5 * Number(e.target.value),
-        });
-        break;
+  const handleBillChange = (bill, multiplyer, e) => {
+    bills[bill] = multiplyer * e.target.value;
+    setBills({
+      ...bills
+    });
+  }
 
-      case 10:
-        setBills({
-          ...bills,
-          ten: 10 * Number(e.target.value),
-        });
-        break;
-
-      case 20:
-        setBills({ ...bills, twenty: 20 * Number(e.target.value) });
-        break;
-
-      case 50:
-        setBills({ ...bills, fifty: 50 * Number(e.target.value) });
-        break;
-
-      case 100:
-        setBills({ ...bills, hundred: 100 * Number(e.target.value) });
-        break;
-
-      case "quarter":
-        setBills({ ...bills, quarter: 0.25 * Number(e.target.value) });
-        break;
-
-      case "dime":
-        setBills({ ...bills, dime: 0.1 * Number(e.target.value) });
-        break;
-
-      case "nickel":
-        setBills({ ...bills, nickel: 0.05 * Number(e.target.value) });
-        break;
-
-      case "penny":
-        setBills({ ...bills, penny: 0.01 * Number(e.target.value) });
-        break;
-
-      default:
-        break;
-    }
-  };
+  
 
   useEffect(() => {
     let sum = 0;
@@ -96,13 +50,13 @@ const Form = () => {
           <tr>
             <td>$100 Bills</td>
             <td>
-              <select onChange={(e) => handleBillChange(100, e)}>
+              <select onChange={(e) => handleBillChange("hundred", 100, e)}>
                 <Option />
               </select>
             </td>
             <td>Quarters</td>
             <td>
-              <select onChange={(e) => handleBillChange("quarter", e)}>
+              <select onChange={(e) => handleBillChange("quarter", 0.25, e)}>
                 <Option />
               </select>
             </td>
@@ -110,13 +64,13 @@ const Form = () => {
           <tr>
             <td>$50 Bills</td>
             <td>
-              <select onChange={(e) => handleBillChange(50, e)}>
+              <select onChange={(e) => handleBillChange("fifty", 50, e)}>
                 <Option />
               </select>
             </td>
             <td>Dimes</td>
             <td>
-              <select onChange={(e) => handleBillChange("dime", e)}>
+              <select onChange={(e) => handleBillChange("dime", 0.10, e)}>
                 <Option />
               </select>
             </td>
@@ -124,13 +78,13 @@ const Form = () => {
           <tr>
             <td>$20 Bills</td>
             <td>
-              <select onChange={(e) => handleBillChange(20, e)}>
+              <select onChange={(e) => handleBillChange("twenty", 20, e)}>
                 <Option />
               </select>
             </td>
             <td>Nickels</td>
             <td>
-              <select onChange={(e) => handleBillChange("nickel", e)}>
+              <select onChange={(e) => handleBillChange("nickel", 0.05, e)}>
                 <Option />
               </select>
             </td>
@@ -138,13 +92,13 @@ const Form = () => {
           <tr>
             <td>$10 Bills</td>
             <td>
-              <select onChange={(e) => handleBillChange(10, e)}>
+              <select onChange={(e) => handleBillChange("ten", 10, e)}>
                 <Option />
               </select>
             </td>
             <td>Pennies</td>
             <td>
-              <select onChange={(e) => handleBillChange("penny", e)}>
+              <select onChange={(e) => handleBillChange("penny", 0.01, e)}>
                 <Option />
               </select>
             </td>
@@ -152,7 +106,7 @@ const Form = () => {
           <tr>
             <td>$5 Bills</td>
             <td>
-              <select onChange={(e) => handleBillChange(5, e)}>
+              <select onChange={(e) => handleBillChange("five", 5, e)}>
                 <Option />
               </select>
             </td>
@@ -160,7 +114,7 @@ const Form = () => {
           <tr>
             <td>$1 Bills</td>
             <td>
-              <select onChange={(e) => handleBillChange(1, e)}>
+              <select onChange={(e) => handleBillChange("one", 1, e)}>
                 <Option />
               </select>
             </td>
