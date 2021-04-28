@@ -4,3 +4,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+h1 {
+  text-align: center;
+  color: #BDADEA;
+  margin-top: 10vh;
+}
