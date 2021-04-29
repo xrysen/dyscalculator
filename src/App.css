@@ -1,8 +1,6 @@
 body {
   background-color: #272727;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 h1 {
@@ -13,4 +11,17 @@ h1 {
 
 .app {
   margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+  color: #BDADEA;
+}
+
+P:hover {
+  cursor: pointer;
 }

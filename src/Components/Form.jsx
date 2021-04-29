@@ -15,6 +15,8 @@ const Form = () => {
     dime: 0,
     nickel: 0,
     penny: 0,
+    loonie: 0,
+    toonie: 0
   });
 
   const handleBillChange = (bill, multiplyer, e) => {
@@ -110,11 +112,23 @@ const Form = () => {
                 <Option />
               </select>
             </td>
+            <td>Toonies (Canada)</td>
+            <td>
+              <select onChange={(e) => handleBillChange("tonnie", 2, e)}>
+                <Option />
+              </select>
+            </td>
           </tr>
           <tr>
             <td>$1 Bills</td>
             <td>
               <select onChange={(e) => handleBillChange("one", 1, e)}>
+                <Option />
+              </select>
+            </td>
+            <td>Loonies (Canada)</td>
+            <td>
+              <select onChange={(e) => handleBillChange("loonie", 1, e)}>
                 <Option />
               </select>
             </td>
